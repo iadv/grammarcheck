@@ -6,6 +6,8 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
+  fallback: ['system-ui', 'arial'],
+  preload: true,
 })
 
 const poppins = Poppins({ 
@@ -13,12 +15,16 @@ const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700', '800'],
   variable: '--font-poppins',
   display: 'swap',
+  fallback: ['system-ui', 'arial'],
+  preload: true,
 })
 
 const jetbrainsMono = JetBrains_Mono({ 
   subsets: ['latin'],
   variable: '--font-jetbrains',
   display: 'swap',
+  fallback: ['monospace'],
+  preload: true,
 })
 
 export const metadata: Metadata = {
@@ -41,6 +47,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className={`${inter.className} antialiased`}>
         <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50">
           {children}
