@@ -1,0 +1,45 @@
+{
+  "name": "grammarcheck",
+  "version": "1.0.0",
+  "description": "Modern grammar correction and rewriting tool",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.2.0",
+    "@headlessui/react": "^2.2.5",
+    "@heroicons/react": "^2.2.0",
+    "@next/font": "^14.2.15",
+    "autoprefixer": "^10.4.16",
+    "clsx": "^2.0.0",
+    "framer-motion": "^10.18.0",
+    "lucide-react": "^0.292.0",
+    "next": "^14.0.0",
+    "openai": "^4.20.0",
+    "postcss": "^8.4.31",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.0.0",
+    "tailwindcss": "^3.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "eslint": "^8.51.0",
+    "eslint-config-next": "^14.0.0",
+    "typescript": "^5.2.0"
+  },
+  "keywords": [
+    "grammar",
+    "ai",
+    "writing",
+    "correction"
+  ],
+  "author": "GrammarCheck Team",
+  "license": "MIT"
+}
