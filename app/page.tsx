@@ -56,7 +56,7 @@ export default function Home() {
       <main className="space-y-8">
         {/* Quick Stats Section */}
         <motion.section 
-          className="py-8 bg-gradient-to-r from-primary/5 to-secondary/5"
+          className="py-4 bg-gradient-to-r from-purple-50 to-pink-50"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -64,7 +64,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap justify-center gap-8 text-center">
               <div className="flex items-center space-x-2">
-                <Users className="w-5 h-5 text-primary" />
+                <Users className="w-5 h-5 text-purple-600" />
                 <span className="text-sm font-medium">50K+ Active Users</span>
               </div>
               <div className="flex items-center space-x-2">
@@ -79,7 +79,7 @@ export default function Home() {
           </div>
         </motion.section>
 
-        <div className="py-12 space-y-8">
+        <div className="py-4 space-y-4">
           <div className="w-full px-4 sm:px-6 lg:px-8">
             <TextInput onProcess={handleProcessText} isLoading={isLoading} />
           </div>
@@ -95,7 +95,7 @@ export default function Home() {
           )}
           
           {result ? (
-            <div className="space-y-8 px-4 sm:px-6 lg:px-8">
+            <div className="space-y-6 px-4 sm:px-6 lg:px-8">
               <GrammarResult 
                 original={originalText} 
                 corrected={result.corrected}
@@ -123,8 +123,8 @@ export default function Home() {
                       ease: "easeInOut"
                     }}
                   >
-                    <div className="w-20 h-20 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl flex items-center justify-center">
-                      <FileText className="w-10 h-10 text-primary" />
+                    <div className="w-20 h-20 bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl flex items-center justify-center">
+                      <FileText className="w-10 h-10 text-purple-600" />
                     </div>
                   </motion.div>
                   
@@ -139,15 +139,15 @@ export default function Home() {
                   
                   <div className="flex flex-wrap justify-center gap-4">
                     <Badge variant="secondary" className="flex items-center space-x-2">
-                      <Sparkles className="w-4 h-4 text-primary" />
+                      <Sparkles className="w-4 h-4 text-purple-600" />
                       <span>Grammar Correction</span>
                     </Badge>
                     <Badge variant="secondary" className="flex items-center space-x-2">
-                      <Sparkles className="w-4 h-4 text-secondary" />
+                      <Sparkles className="w-4 h-4 text-pink-600" />
                       <span>15+ Writing Styles</span>
                     </Badge>
                     <Badge variant="secondary" className="flex items-center space-x-2">
-                      <Sparkles className="w-4 h-4 text-primary" />
+                      <Sparkles className="w-4 h-4 text-purple-600" />
                       <span>Instant Results</span>
                     </Badge>
                   </div>
@@ -165,7 +165,7 @@ export default function Home() {
 
         {/* Final CTA Section */}
         <motion.section 
-          className="py-20 bg-gradient-to-br from-primary to-secondary text-primary-foreground"
+          className="py-20 gradient-bg-modern text-white"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -175,17 +175,17 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
               Join 50,000+ Users Who've Transformed Their Writing
             </h2>
-            <p className="text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
               Don't let grammar mistakes hold you back. Start writing with confidence today and see the difference AI-powered correction can make.
             </p>
             <Button
               size="lg"
               variant="secondary"
-              className="bg-background text-foreground hover:bg-background/90 text-lg px-8 py-4"
+              className="bg-white text-purple-600 hover:bg-gray-50 text-lg px-8 py-4"
             >
               Start Writing Now - It's Free!
             </Button>
-            <p className="text-primary-foreground/60 text-sm mt-4">No credit card required • Instant access</p>
+            <p className="text-purple-200 text-sm mt-4">No credit card required • Instant access</p>
           </div>
         </motion.section>
       </main>

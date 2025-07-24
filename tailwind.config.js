@@ -120,13 +120,14 @@ module.exports = {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
-  		animation: {
-  			'fade-in': 'fadeIn 0.5s ease-in-out',
-  			'slide-up': 'slideUp 0.3s ease-out',
-  			'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-  			float: 'float 6s ease-in-out infinite',
-  			glow: 'glow 2s ease-in-out infinite alternate'
-  		},
+  				animation: {
+			'fade-in': 'fadeIn 0.5s ease-in-out',
+			'slide-up': 'slideUp 0.3s ease-out',
+			'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+			float: 'float 6s ease-in-out infinite',
+			glow: 'glow 2s ease-in-out infinite alternate',
+			scroll: 'scroll 30s linear infinite'
+		},
   		keyframes: {
   			fadeIn: {
   				'0%': {
@@ -154,14 +155,22 @@ module.exports = {
   					transform: 'translateY(-20px)'
   				}
   			},
-  			glow: {
-  				'0%': {
-  					boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)'
-  				},
-  				'100%': {
-  					boxShadow: '0 0 30px rgba(59, 130, 246, 0.8)'
-  				}
-  			}
+  						glow: {
+				'0%': {
+					boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)'
+				},
+				'100%': {
+					boxShadow: '0 0 30px rgba(59, 130, 246, 0.8)'
+				}
+			},
+			scroll: {
+				'0%': {
+					transform: 'translateX(0)'
+				},
+				'100%': {
+					transform: 'translateX(-50%)'
+				}
+			}
   		},
   		backdropBlur: {
   			xs: '2px'

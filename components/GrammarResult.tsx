@@ -56,7 +56,7 @@ export default function GrammarResult({ original, corrected, rewrites }: Grammar
       transition={{ duration: 0.6 }}
     >
       <Card className="w-full">
-        <CardHeader>
+        <CardHeader className="pb-2">
           <CardTitle className="flex items-center space-x-3">
             <motion.div
               initial={{ scale: 0 }}
@@ -68,7 +68,7 @@ export default function GrammarResult({ original, corrected, rewrites }: Grammar
             <span className="text-2xl font-display">Results</span>
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-4">
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>

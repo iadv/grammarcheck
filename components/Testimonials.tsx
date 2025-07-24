@@ -10,9 +10,8 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Chen",
+    name: "Sarah C.",
     role: "Content Creator",
-    company: "TechBlog Pro",
     avatar: "SC",
     rating: 5,
     text: "GrammarCheck transformed my writing workflow! I went from spending hours proofreading to getting perfect grammar and 15+ style variations in seconds. My engagement rates increased by 40%!",
@@ -21,9 +20,8 @@ const testimonials = [
   },
   {
     id: 2,
-    name: "Marcus Rodriguez",
+    name: "Marcus R.",
     role: "Marketing Director",
-    company: "StartupXYZ",
     avatar: "MR",
     rating: 5,
     text: "This is a game-changer for our marketing team. We can now create multiple versions of our copy instantly - formal for LinkedIn, casual for Twitter, persuasive for ads. Saves us hours every week!",
@@ -32,9 +30,8 @@ const testimonials = [
   },
   {
     id: 3,
-    name: "Dr. Emily Watson",
+    name: "Dr. Emily W.",
     role: "Professor",
-    company: "Stanford University",
     avatar: "EW",
     rating: 5,
     text: "I recommend GrammarCheck to all my students. It's like having a professional editor available 24/7. The academic writing style is particularly impressive - maintains scholarly tone perfectly.",
@@ -43,9 +40,8 @@ const testimonials = [
   },
   {
     id: 4,
-    name: "Alex Thompson",
+    name: "Alex T.",
     role: "Freelance Writer",
-    company: "Self-employed",
     avatar: "AT",
     rating: 5,
     text: "As a freelancer, time is money. GrammarCheck helps me deliver polished content faster than ever. Clients love the quality, and I love the speed. Win-win!",
@@ -54,9 +50,8 @@ const testimonials = [
   },
   {
     id: 5,
-    name: "Priya Patel",
+    name: "Priya P.",
     role: "Social Media Manager",
-    company: "Digital Agency",
     avatar: "PP",
     rating: 5,
     text: "The different writing styles are incredible! I can adapt the same message for different platforms instantly. Our social media engagement has never been higher.",
@@ -65,9 +60,8 @@ const testimonials = [
   },
   {
     id: 6,
-    name: "David Kim",
+    name: "David K.",
     role: "Startup Founder",
-    company: "InnovateTech",
     avatar: "DK",
     rating: 5,
     text: "GrammarCheck helped us craft the perfect pitch deck. The confident and professional styles made our presentation stand out. We just closed our Series A funding!",
@@ -136,14 +130,7 @@ export default function Testimonials() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className={`h-full ${testimonial.featured ? 'ring-2 ring-primary/20' : ''}`}>
-                {testimonial.featured && (
-                  <div className="absolute -top-3 left-4 z-10">
-                    <Badge className="bg-gradient-to-r from-primary to-secondary text-primary-foreground">
-                      Featured Review
-                    </Badge>
-                  </div>
-                )}
+              <Card className="h-full">
                 
                 <CardHeader>
                   <div className="flex items-center space-x-3">
@@ -159,7 +146,7 @@ export default function Testimonials() {
                           <CheckCircle className="w-4 h-4 text-blue-500" />
                         )}
                       </div>
-                      <p className="text-sm text-muted-foreground">{testimonial.role} at {testimonial.company}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                     </div>
                   </div>
                 </CardHeader>
@@ -198,22 +185,15 @@ export default function Testimonials() {
               <p className="text-primary-foreground/80 text-xl mb-6 max-w-2xl mx-auto">
                 Join thousands of satisfied users who've already improved their writing with AI-powered grammar correction and style variations.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  className="bg-background text-foreground hover:bg-background/90"
-                >
-                  Start Writing Now
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
-                >
-                  See More Reviews
-                </Button>
-              </div>
+                              <div className="flex justify-center">
+                  <Button
+                    variant="secondary"
+                    size="lg"
+                    className="bg-background text-foreground hover:bg-background/90"
+                  >
+                    Start Writing Now
+                  </Button>
+                </div>
             </CardContent>
           </Card>
         </motion.div>

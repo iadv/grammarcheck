@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { Sparkles, Zap, CheckCircle } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 export default function Header() {
   return (
@@ -51,11 +53,11 @@ export default function Header() {
         />
       </div>
 
-      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 py-12">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 py-6">
         <div className="text-center">
           {/* Logo and branding */}
-          <motion.div 
-            className="flex items-center justify-center mb-8"
+                      <motion.div 
+              className="flex items-center justify-center mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -67,10 +69,10 @@ export default function Header() {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-soft">
-                  <CheckCircle className="w-8 h-8 text-primary-600" />
+                  <CheckCircle className="w-8 h-8 text-purple-600" />
                 </div>
                 <motion.div 
-                  className="absolute -top-1 -right-1 w-7 h-7 bg-secondary-500 rounded-full flex items-center justify-center"
+                  className="absolute -top-1 -right-1 w-7 h-7 bg-pink-500 rounded-full flex items-center justify-center"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 >
@@ -79,9 +81,9 @@ export default function Header() {
               </motion.div>
               <div>
                 <h1 className="text-4xl font-display font-bold text-white">
-                  Grammar<span className="text-secondary-200">Check</span>
+                  Grammar<span className="text-pink-200">Check</span>
                 </h1>
-                <p className="text-primary-100 text-sm font-medium mt-1">Powered by AI</p>
+                <p className="text-purple-100 text-sm font-medium mt-1">Powered by AI</p>
               </div>
             </div>
           </motion.div>
@@ -89,18 +91,18 @@ export default function Header() {
           {/* Hero section */}
           <div className="w-full">
             <motion.h2 
-              className="text-6xl md:text-7xl font-display font-bold text-white mb-8 leading-tight text-balance"
+              className="text-4xl md:text-5xl font-display font-bold text-white mb-3 leading-tight text-balance"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <span className="inline-block">Instantly Correct</span>
-              <span className="inline-block text-secondary-200 ml-6">Grammar & Rewrite</span>
-              <span className="inline-block text-primary-100 ml-6">in Any Style</span>
+              <span className="inline-block text-pink-200 ml-4">Grammar & Rewrite</span>
+              <span className="inline-block text-purple-100 ml-4">in Any Style</span>
             </motion.h2>
             
             <motion.p 
-              className="text-xl text-primary-100 mb-10 max-w-4xl mx-auto leading-relaxed text-balance"
+              className="text-base text-purple-100 mb-3 max-w-4xl mx-auto leading-relaxed text-balance"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -111,35 +113,32 @@ export default function Header() {
 
             {/* Feature highlights */}
             <motion.div 
-              className="flex flex-wrap justify-center gap-6 mb-8"
+              className="flex flex-wrap justify-center gap-6 mb-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <motion.div 
-                className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-5 py-3 border border-white/20"
-                whileHover={{ scale: 1.05, y: -2 }}
-                transition={{ type: "spring", stiffness: 300 }}
+              <Badge 
+                variant="secondary"
+                className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
               >
-                <Zap className="w-4 h-4 text-secondary-300" />
-                <span className="text-white text-sm font-medium">Instant Results</span>
-              </motion.div>
-              <motion.div 
-                className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-5 py-3 border border-white/20"
-                whileHover={{ scale: 1.05, y: -2 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                <Zap className="w-4 h-4 text-pink-300" />
+                <span className="text-sm font-medium">Instant Results</span>
+              </Badge>
+              <Badge 
+                variant="secondary"
+                className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
               >
-                <CheckCircle className="w-4 h-4 text-secondary-300" />
-                <span className="text-white text-sm font-medium">15+ Writing Styles</span>
-              </motion.div>
-              <motion.div 
-                className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-5 py-3 border border-white/20"
-                whileHover={{ scale: 1.05, y: -2 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                <CheckCircle className="w-4 h-4 text-pink-300" />
+                <span className="text-sm font-medium">15+ Writing Styles</span>
+              </Badge>
+              <Badge 
+                variant="secondary"
+                className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
               >
-                <Sparkles className="w-4 h-4 text-secondary-300" />
-                <span className="text-white text-sm font-medium">AI-Powered</span>
-              </motion.div>
+                <Sparkles className="w-4 h-4 text-pink-300" />
+                <span className="text-sm font-medium">AI-Powered</span>
+              </Badge>
             </motion.div>
           </div>
         </div>
