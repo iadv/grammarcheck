@@ -53,37 +53,37 @@ export default function Header() {
         />
       </div>
 
-      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 py-6">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
         <div className="text-center">
           {/* Logo and branding */}
-                      <motion.div 
-              className="flex items-center justify-center mb-6"
+          <motion.div 
+            className="flex items-center justify-center mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3 sm:space-x-4">
               <motion.div 
                 className="relative"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-soft">
-                  <CheckCircle className="w-8 h-8 text-purple-600" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-2xl flex items-center justify-center shadow-soft">
+                  <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600" />
                 </div>
                 <motion.div 
-                  className="absolute -top-1 -right-1 w-7 h-7 bg-pink-500 rounded-full flex items-center justify-center"
+                  className="absolute -top-1 -right-1 w-6 h-6 sm:w-7 sm:h-7 bg-pink-500 rounded-full flex items-center justify-center"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 >
-                  <Sparkles className="w-4 h-4 text-white" />
+                  <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 </motion.div>
               </motion.div>
               <div>
-                <h1 className="text-4xl font-display font-bold text-white">
+                <h1 className="text-3xl sm:text-4xl font-display font-bold text-white">
                   Grammar<span className="text-pink-200">Check</span>
                 </h1>
-                <p className="text-purple-100 text-sm font-medium mt-1">Powered by AI</p>
+                <p className="text-purple-100 text-xs sm:text-sm font-medium mt-1">Powered by AI</p>
               </div>
             </div>
           </motion.div>
@@ -91,7 +91,7 @@ export default function Header() {
           {/* Hero section */}
           <div className="w-full">
             <motion.h2 
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-3 leading-tight text-balance"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold text-white mb-2 sm:mb-3 leading-tight text-balance"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -102,18 +102,18 @@ export default function Header() {
             </motion.h2>
             
             <motion.p 
-              className="text-sm sm:text-base text-purple-100 mb-3 max-w-4xl mx-auto leading-relaxed text-balance px-2 sm:px-0"
+              className="text-xs sm:text-sm md:text-base text-purple-100 mb-2 sm:mb-3 max-w-4xl mx-auto leading-relaxed text-balance px-2 sm:px-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Professional-grade grammar correction with AI-powered rewriting in 15+ writing styles. 
-              Perfect for students, professionals, and content creators.
+              <span className="hidden sm:inline">Professional-grade grammar correction with AI-powered rewriting in 15+ writing styles. Perfect for students, professionals, and content creators.</span>
+              <span className="sm:hidden">AI-powered grammar correction & rewriting in 15+ styles.</span>
             </motion.p>
 
             {/* Feature highlights */}
             <motion.div 
-              className="flex flex-wrap justify-center gap-2 sm:gap-6 mb-2"
+              className="flex flex-wrap justify-center gap-1 sm:gap-2 md:gap-6 mb-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -123,21 +123,24 @@ export default function Header() {
                 className="flex items-center space-x-1 sm:space-x-2 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 text-xs sm:text-sm"
               >
                 <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-pink-300" />
-                <span className="font-medium">Instant Results</span>
+                <span className="font-medium hidden sm:inline">Instant Results</span>
+                <span className="font-medium sm:hidden">Instant</span>
               </Badge>
               <Badge 
                 variant="secondary"
                 className="flex items-center space-x-1 sm:space-x-2 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 text-xs sm:text-sm"
               >
                 <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-pink-300" />
-                <span className="font-medium">15+ Writing Styles</span>
+                <span className="font-medium hidden sm:inline">15+ Writing Styles</span>
+                <span className="font-medium sm:hidden">15+ Styles</span>
               </Badge>
               <Badge 
                 variant="secondary"
                 className="flex items-center space-x-1 sm:space-x-2 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 text-xs sm:text-sm"
               >
                 <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-pink-300" />
-                <span className="font-medium">AI-Powered</span>
+                <span className="font-medium hidden sm:inline">AI-Powered</span>
+                <span className="font-medium sm:hidden">AI</span>
               </Badge>
             </motion.div>
           </div>

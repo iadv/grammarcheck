@@ -36,8 +36,8 @@ export default function TextInput({ onProcess, isLoading }: TextInputProps) {
             Enter your text to check grammar and get rewriting suggestions
           </Label>
           <div className="relative">
-            <div className="absolute top-4 left-4 flex items-center pointer-events-none">
-              <Search className="h-5 w-5 text-muted-foreground" />
+            <div className="absolute top-3 sm:top-4 left-3 sm:left-4 flex items-center pointer-events-none">
+              <Search className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground" />
             </div>
             
             <Textarea
@@ -45,28 +45,30 @@ export default function TextInput({ onProcess, isLoading }: TextInputProps) {
               value={text}
               onChange={(e) => setText(e.target.value)}
               placeholder="Type or paste your text here..."
-              className="pl-12 pr-16 min-h-[120px] sm:min-h-[140px] resize-none text-base sm:text-xl border-2 border-primary/20 focus:border-primary shadow-lg"
+              className="pl-10 sm:pl-12 pr-20 sm:pr-24 min-h-[100px] sm:min-h-[120px] md:min-h-[140px] resize-none text-base sm:text-xl border-2 border-primary/20 focus:border-primary shadow-lg"
               disabled={isLoading}
               maxLength={10000}
             />
             
-            <div className="absolute inset-y-0 right-0 pr-4 flex items-center">
+            <div className="absolute inset-y-0 right-0 pr-2 sm:pr-4 flex items-center">
               <Button
                 type="submit"
                 disabled={!text.trim() || isLoading}
                 size="sm"
-                className="h-10 sm:h-12 px-4 sm:px-6 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold shadow-lg text-base sm:text-lg"
+                className="h-8 sm:h-10 md:h-12 px-3 sm:px-4 md:px-6 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold shadow-lg text-sm sm:text-base md:text-lg"
               >
                 {isLoading ? (
                   <>
-                    <Loader2 className="h-5 w-5 animate-spin mr-2" />
-                    Processing...
+                    <Loader2 className="h-4 w-4 sm:h-5 sm:w-5 animate-spin mr-1 sm:mr-2" />
+                    <span className="hidden sm:inline">Processing...</span>
+                    <span className="sm:hidden">...</span>
                   </>
                 ) : (
                   <>
-                    <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" />
-                    <span className="hidden sm:inline">Refine Text</span>
-                    <span className="sm:hidden">Refine</span>
+                    <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 mr-1 sm:mr-2" />
+                    <span className="hidden md:inline">Refine Text</span>
+                    <span className="hidden sm:inline md:hidden">Refine</span>
+                    <span className="sm:hidden">Go</span>
                   </>
                 )}
               </Button>
