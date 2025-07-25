@@ -91,18 +91,18 @@ export default function Header() {
           {/* Hero section */}
           <div className="w-full">
             <motion.h2 
-              className="text-4xl md:text-5xl font-display font-bold text-white mb-3 leading-tight text-balance"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-3 leading-tight text-balance"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="inline-block">Instantly Correct</span>
-              <span className="inline-block text-pink-200 ml-4">Grammar & Rewrite</span>
-              <span className="inline-block text-purple-100 ml-4">in Any Style</span>
+              <span className="block sm:inline-block">Instantly Correct</span>
+              <span className="block sm:inline-block text-pink-200 sm:ml-4">Grammar & Rewrite</span>
+              <span className="block sm:inline-block text-purple-100 sm:ml-4">in Any Style</span>
             </motion.h2>
             
             <motion.p 
-              className="text-base text-purple-100 mb-3 max-w-4xl mx-auto leading-relaxed text-balance"
+              className="text-sm sm:text-base text-purple-100 mb-3 max-w-4xl mx-auto leading-relaxed text-balance px-2 sm:px-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -113,31 +113,31 @@ export default function Header() {
 
             {/* Feature highlights */}
             <motion.div 
-              className="flex flex-wrap justify-center gap-6 mb-2"
+              className="flex flex-wrap justify-center gap-2 sm:gap-6 mb-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <Badge 
                 variant="secondary"
-                className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+                className="flex items-center space-x-1 sm:space-x-2 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 text-xs sm:text-sm"
               >
-                <Zap className="w-4 h-4 text-pink-300" />
-                <span className="text-sm font-medium">Instant Results</span>
+                <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-pink-300" />
+                <span className="font-medium">Instant Results</span>
               </Badge>
               <Badge 
                 variant="secondary"
-                className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+                className="flex items-center space-x-1 sm:space-x-2 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 text-xs sm:text-sm"
               >
-                <CheckCircle className="w-4 h-4 text-pink-300" />
-                <span className="text-sm font-medium">15+ Writing Styles</span>
+                <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-pink-300" />
+                <span className="font-medium">15+ Writing Styles</span>
               </Badge>
               <Badge 
                 variant="secondary"
-                className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+                className="flex items-center space-x-1 sm:space-x-2 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 text-xs sm:text-sm"
               >
-                <Sparkles className="w-4 h-4 text-pink-300" />
-                <span className="text-sm font-medium">AI-Powered</span>
+                <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-pink-300" />
+                <span className="font-medium">AI-Powered</span>
               </Badge>
             </motion.div>
           </div>

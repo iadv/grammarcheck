@@ -73,24 +73,24 @@ export default function GrammarResult({ original, corrected, rewrites }: Grammar
             <table className="w-full">
               <thead>
                 <tr className="border-b-2 border-border">
-                  <th className="text-left py-3 px-4 font-display font-semibold">Style</th>
-                  <th className="text-left py-3 px-4 font-display font-semibold">Text</th>
-                  <th className="text-right py-3 px-4 font-display font-semibold">Actions</th>
+                  <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-display font-semibold text-sm sm:text-base">Style</th>
+                  <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-display font-semibold text-sm sm:text-base">Text</th>
+                  <th className="text-right py-2 sm:py-3 px-2 sm:px-4 font-display font-semibold text-sm sm:text-base">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {/* Grammar Correction Section */}
                 <tr className="border-b-2 border-green-200 bg-green-50/30">
-                  <td className="py-4 px-4 font-display font-medium text-green-700">
-                    <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-5 h-5" />
-                      <span>Original</span>
+                  <td className="py-3 sm:py-4 px-2 sm:px-4 font-display font-medium text-green-700">
+                    <div className="flex items-center space-x-1 sm:space-x-2">
+                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+                      <span className="text-sm sm:text-base">Original</span>
                     </div>
                   </td>
-                  <td className="py-4 px-4">
-                    <p className="text-foreground leading-relaxed">{original}</p>
+                  <td className="py-3 sm:py-4 px-2 sm:px-4">
+                    <p className="text-foreground leading-relaxed text-sm sm:text-base">{original}</p>
                   </td>
-                  <td className="py-4 px-4 text-right">
+                  <td className="py-3 sm:py-4 px-2 sm:px-4 text-right">
                     <Button
                       onClick={() => copyToClipboard(original, 'original')}
                       variant="outline"
@@ -113,16 +113,16 @@ export default function GrammarResult({ original, corrected, rewrites }: Grammar
                 </tr>
                 
                 <tr className="border-b-2 border-green-200 bg-green-50/30">
-                  <td className="py-4 px-4 font-display font-medium text-green-700">
-                    <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-5 h-5" />
-                      <span>Corrected</span>
+                  <td className="py-3 sm:py-4 px-2 sm:px-4 font-display font-medium text-green-700">
+                    <div className="flex items-center space-x-1 sm:space-x-2">
+                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+                      <span className="text-sm sm:text-base">Corrected</span>
                     </div>
                   </td>
-                  <td className="py-4 px-4">
-                    <p className="text-foreground leading-relaxed font-medium">{corrected}</p>
+                  <td className="py-3 sm:py-4 px-2 sm:px-4">
+                    <p className="text-foreground leading-relaxed font-medium text-sm sm:text-base">{corrected}</p>
                   </td>
-                  <td className="py-4 px-4 text-right">
+                  <td className="py-3 sm:py-4 px-2 sm:px-4 text-right">
                     <Button
                       onClick={() => copyToClipboard(corrected, 'corrected')}
                       variant="outline"
@@ -146,9 +146,9 @@ export default function GrammarResult({ original, corrected, rewrites }: Grammar
 
                 {/* Separator */}
                 <tr className="border-b-2 border-border bg-muted/50">
-                  <td colSpan={3} className="py-2 px-4">
+                  <td colSpan={3} className="py-2 px-2 sm:px-4">
                     <div className="text-center">
-                      <Badge variant="secondary" className="px-4 py-1">
+                      <Badge variant="secondary" className="px-3 sm:px-4 py-1 text-xs sm:text-sm">
                         Writing Style Variations
                       </Badge>
                     </div>
@@ -164,16 +164,16 @@ export default function GrammarResult({ original, corrected, rewrites }: Grammar
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.05 }}
                   >
-                    <td className="py-4 px-4 font-display font-medium">
-                      <div className="flex items-center space-x-2">
-                        <span className="text-lg">{getStyleIcon(style)}</span>
-                        <span>{style}</span>
+                    <td className="py-3 sm:py-4 px-2 sm:px-4 font-display font-medium">
+                      <div className="flex items-center space-x-1 sm:space-x-2">
+                        <span className="text-base sm:text-lg">{getStyleIcon(style)}</span>
+                        <span className="text-sm sm:text-base">{style}</span>
                       </div>
                     </td>
-                    <td className="py-4 px-4">
-                      <p className="text-foreground leading-relaxed">{text}</p>
+                    <td className="py-3 sm:py-4 px-2 sm:px-4">
+                      <p className="text-foreground leading-relaxed text-sm sm:text-base">{text}</p>
                     </td>
-                    <td className="py-4 px-4 text-right">
+                    <td className="py-3 sm:py-4 px-2 sm:px-4 text-right">
                       <Button
                         onClick={() => copyToClipboard(text, style)}
                         variant="outline"

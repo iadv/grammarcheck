@@ -46,7 +46,7 @@ export default function SocialProofBanner() {
   return (
     <div className="bg-gradient-to-r from-green-50 to-blue-50 border-b border-green-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
-        <div className="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-8">
+        <div className="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0 md:space-x-8">
           {/* Live Activity */}
           <motion.div 
             className="flex items-center"
@@ -54,21 +54,21 @@ export default function SocialProofBanner() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Badge variant="outline" className="flex items-center space-x-2 border-green-200 bg-green-50 px-3 py-1.5">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-green-700">Live Activity</span>
+            <Badge variant="outline" className="flex items-center space-x-1 sm:space-x-2 border-green-200 bg-green-50 px-2 sm:px-3 py-1 sm:py-1.5">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-xs sm:text-sm font-medium text-green-700">Live Activity</span>
             </Badge>
           </motion.div>
 
           {/* Purpose Text */}
           <motion.div 
-            className="flex-1 text-center px-4"
+            className="flex-1 text-center px-2 sm:px-4"
             key={currentPurpose}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <p className="text-sm text-foreground leading-relaxed">
+            <p className="text-xs sm:text-sm text-foreground leading-relaxed">
               <span className="font-medium">Someone just used GrammarCheck for: </span>
               <span className="font-semibold text-purple-600">{purposes[currentPurpose]}</span>
             </p>
@@ -76,14 +76,14 @@ export default function SocialProofBanner() {
 
           {/* Stats */}
           <motion.div 
-            className="flex items-center space-x-6 text-sm text-muted-foreground"
+            className="flex items-center space-x-3 sm:space-x-6 text-xs sm:text-sm text-muted-foreground"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
             {liveStats.map((stat, index) => (
-              <div key={index} className="flex items-center space-x-2">
-                <stat.icon className="w-4 h-4" />
+              <div key={index} className="flex items-center space-x-1 sm:space-x-2">
+                <stat.icon className="w-3 h-3 sm:w-4 sm:h-4" />
                 <span className="font-medium">{stat.text}</span>
               </div>
             ))}
