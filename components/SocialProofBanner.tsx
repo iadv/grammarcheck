@@ -44,7 +44,8 @@ export default function SocialProofBanner() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-green-50 to-blue-50 border-b border-green-200">
+    <div className="relative bg-gradient-to-r from-green-50 to-blue-50 border-b border-green-200">
+      <a href="/blog" className="absolute right-4 top-2 px-4 py-1.5 rounded-lg bg-purple-100 text-purple-700 font-semibold hover:bg-purple-200 transition text-sm z-10">Read our Blog</a>
       <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 py-1 sm:py-2">
         <div className="flex flex-col md:flex-row items-center justify-between space-y-1 sm:space-y-2 md:space-y-0 md:space-x-8">
           {/* Live Activity - Hidden on mobile */}

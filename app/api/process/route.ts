@@ -1,5 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { processText } from '@/lib/ai';
+import { Pool } from 'pg';
+
+const pool = new Pool({ connectionString: process.env.NEON_DATABASE_URL });
+
+async function logSession(inputText: string, ipAddress: string | null, userAgent: string | null) {
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS sessions (
+      id SERIAL PRIMARY KEY,
+      input_text TEXT NOT NULL,
+      ip_address TEXT,
+      user_agent TEXT,
+      created_at TIMESTAMPTZ DEFAULT NOW()
+    )
+  `);
+  await pool.query(
+    'INSERT INTO sessions (input_text, ip_address, user_agent) VALUES ($1, $2, $3)',
+    [inputText, ipAddress, userAgent]
+  );
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -18,6 +37,12 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    // Get IP address and user agent
+    const ip = request.headers.get('x-forwarded-for') || request.ip || null;
+    const userAgent = request.headers.get('user-agent') || null;
+
+    await logSession(text, ip, userAgent);
 
     const result = await processText(text);
 
