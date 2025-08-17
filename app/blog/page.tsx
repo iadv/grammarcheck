@@ -3,7 +3,6 @@ import Link from 'next/link';
 import posts from './posts';
 
 export default function Blog() {
-  // For now, always show the first post. In a real app, use router params for dynamic routing.
   const post = posts[0];
   return (
     <div className="relative max-w-5xl mx-auto py-12 px-4 flex flex-col md:flex-row gap-8">
@@ -22,11 +21,13 @@ export default function Blog() {
           <Link href="/" className="text-purple-600 hover:underline">&larr; Back to Home</Link>
         </div>
       </div>
+      {/* Divider for mobile */}
+      <div className="block md:hidden my-6 border-t border-gray-200" />
       <aside className="w-full md:w-64 bg-gray-50 border border-gray-200 rounded-xl p-4 h-fit md:sticky md:top-8">
-        <h3 className="text-lg font-semibold mb-2">All Posts</h3>
+        <h3 className="text-lg font-semibold mb-2 text-center md:text-left">All Posts</h3>
         <ul className="space-y-1">
           {posts.map((p) => (
-            <li key={p.slug}>
+            <li key={p.slug} className="text-center md:text-left">
               <Link href={`/blog/${p.slug}`} className="text-purple-700 hover:underline font-medium">
                 {p.title}
               </Link>
