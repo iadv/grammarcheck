@@ -57,146 +57,124 @@ export default function GrammarResult({ original, corrected, rewrites }: Grammar
     >
       <Card className="w-full">
         <CardHeader className="pb-2">
-          <CardTitle className="flex items-center space-x-3">
+          <CardTitle className="flex items-center space-x-2 sm:space-x-3">
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 300, delay: 0.2 }}
             >
-              <CheckCircle className="w-7 h-7 text-green-500" />
+              <CheckCircle className="w-5 h-5 sm:w-7 sm:h-7 text-green-500" />
             </motion.div>
-            <span className="text-2xl font-display">Results</span>
+            <span className="text-lg sm:text-2xl font-display">Results</span>
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b-2 border-border">
-                  <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-display font-semibold text-sm sm:text-base">Style</th>
-                  <th className="text-left py-2 sm:py-3 px-2 sm:px-4 font-display font-semibold text-sm sm:text-base">Text</th>
-                  <th className="text-right py-2 sm:py-3 px-2 sm:px-4 font-display font-semibold text-sm sm:text-base">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {/* Grammar Correction Section */}
-                <tr className="border-b-2 border-green-200 bg-green-50/30">
-                  <td className="py-3 sm:py-4 px-2 sm:px-4 font-display font-medium text-green-700">
-                    <div className="flex items-center space-x-1 sm:space-x-2">
-                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />
-                      <span className="text-sm sm:text-base">Original</span>
-                    </div>
-                  </td>
-                  <td className="py-3 sm:py-4 px-2 sm:px-4">
-                    <p className="text-foreground leading-relaxed text-sm sm:text-base">{original}</p>
-                  </td>
-                  <td className="py-3 sm:py-4 px-2 sm:px-4 text-right">
-                    <Button
-                      onClick={() => copyToClipboard(original, 'original')}
-                      variant="outline"
-                      size="sm"
-                      className="ml-auto"
-                    >
-                      {copiedText === 'original' ? (
-                        <>
-                          <Check className="w-4 h-4 text-green-500 mr-2" />
-                          Copied!
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="w-4 h-4 mr-2" />
-                          Copy
-                        </>
-                      )}
-                    </Button>
-                  </td>
-                </tr>
-                
-                <tr className="border-b-2 border-green-200 bg-green-50/30">
-                  <td className="py-3 sm:py-4 px-2 sm:px-4 font-display font-medium text-green-700">
-                    <div className="flex items-center space-x-1 sm:space-x-2">
-                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />
-                      <span className="text-sm sm:text-base">Corrected</span>
-                    </div>
-                  </td>
-                  <td className="py-3 sm:py-4 px-2 sm:px-4">
-                    <p className="text-foreground leading-relaxed font-medium text-sm sm:text-base">{corrected}</p>
-                  </td>
-                  <td className="py-3 sm:py-4 px-2 sm:px-4 text-right">
-                    <Button
-                      onClick={() => copyToClipboard(corrected, 'corrected')}
-                      variant="outline"
-                      size="sm"
-                      className="ml-auto"
-                    >
-                      {copiedText === 'corrected' ? (
-                        <>
-                          <Check className="w-4 h-4 text-green-500 mr-2" />
-                          Copied!
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="w-4 h-4 mr-2" />
-                          Copy
-                        </>
-                      )}
-                    </Button>
-                  </td>
-                </tr>
+          {/* Mobile-optimized layout */}
+          <div className="space-y-4">
+            {/* Original Text */}
+            <div className="border border-gray-200 rounded-lg p-3 sm:p-4 bg-gray-50/50">
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-gray-600" />
+                  <span className="text-sm font-medium text-gray-700">Original</span>
+                </div>
+                <Button
+                  onClick={() => copyToClipboard(original, 'original')}
+                  variant="outline"
+                  size="sm"
+                  className="h-8 text-xs"
+                >
+                  {copiedText === 'original' ? (
+                    <>
+                      <Check className="w-3 h-3 text-green-500 mr-1" />
+                      Copied!
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-3 h-3 mr-1" />
+                      Copy
+                    </>
+                  )}
+                </Button>
+              </div>
+              <p className="text-sm sm:text-base text-gray-800 leading-relaxed">{original}</p>
+            </div>
 
-                {/* Separator */}
-                <tr className="border-b-2 border-border bg-muted/50">
-                  <td colSpan={3} className="py-2 px-2 sm:px-4">
-                    <div className="text-center">
-                      <Badge variant="secondary" className="px-3 sm:px-4 py-1 text-xs sm:text-sm">
-                        Writing Style Variations
-                      </Badge>
-                    </div>
-                  </td>
-                </tr>
+            {/* Corrected Text */}
+            <div className="border border-green-200 rounded-lg p-3 sm:p-4 bg-green-50/50">
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  <span className="text-sm font-medium text-green-700">Corrected</span>
+                </div>
+                <Button
+                  onClick={() => copyToClipboard(corrected, 'corrected')}
+                  variant="outline"
+                  size="sm"
+                  className="h-8 text-xs"
+                >
+                  {copiedText === 'corrected' ? (
+                    <>
+                      <Check className="w-3 h-3 text-green-500 mr-1" />
+                      Copied!
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-3 h-3 mr-1" />
+                      Copy
+                    </>
+                  )}
+                </Button>
+              </div>
+              <p className="text-sm sm:text-base text-gray-800 leading-relaxed font-medium">{corrected}</p>
+            </div>
 
-                {/* Writing Styles */}
+            {/* Writing Styles Section */}
+            <div className="border-t pt-4">
+              <div className="text-center mb-4">
+                <Badge variant="secondary" className="px-3 py-1 text-xs">
+                  Writing Style Variations
+                </Badge>
+              </div>
+              
+              <div className="space-y-3">
                 {Object.entries(rewrites).map(([style, text], index) => (
-                  <motion.tr 
+                  <motion.div 
                     key={style} 
-                    className="border-b border-border hover:bg-muted/50 transition-colors"
+                    className="border border-gray-200 rounded-lg p-3 sm:p-4 bg-white hover:bg-gray-50/50 transition-colors"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.05 }}
                   >
-                    <td className="py-3 sm:py-4 px-2 sm:px-4 font-display font-medium">
-                      <div className="flex items-center space-x-1 sm:space-x-2">
-                        <span className="text-base sm:text-lg">{getStyleIcon(style)}</span>
-                        <span className="text-sm sm:text-base">{style}</span>
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center space-x-2">
+                        <span className="text-base">{getStyleIcon(style)}</span>
+                        <span className="text-sm font-medium text-gray-700">{style}</span>
                       </div>
-                    </td>
-                    <td className="py-3 sm:py-4 px-2 sm:px-4">
-                      <p className="text-foreground leading-relaxed text-sm sm:text-base">{text}</p>
-                    </td>
-                    <td className="py-3 sm:py-4 px-2 sm:px-4 text-right">
                       <Button
                         onClick={() => copyToClipboard(text, style)}
                         variant="outline"
                         size="sm"
-                        className="ml-auto"
+                        className="h-8 text-xs"
                       >
                         {copiedText === style ? (
                           <>
-                            <Check className="w-4 h-4 text-green-500 mr-2" />
+                            <Check className="w-3 h-3 text-green-500 mr-1" />
                             Copied!
                           </>
                         ) : (
                           <>
-                            <Copy className="w-4 h-4 mr-2" />
+                            <Copy className="w-3 h-3 mr-1" />
                             Copy
                           </>
                         )}
                       </Button>
-                    </td>
-                  </motion.tr>
+                    </div>
+                    <p className="text-sm sm:text-base text-gray-800 leading-relaxed">{text}</p>
+                  </motion.div>
                 ))}
-              </tbody>
-            </table>
+              </div>
+            </div>
           </div>
         </CardContent>
       </Card>
